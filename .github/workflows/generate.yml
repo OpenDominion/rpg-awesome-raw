@@ -15,8 +15,6 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Generate assets
-        env:
-          RA_VERSION: ${{ github.ref_name }}
         run: mkdir -p output dist && docker compose up --build --exit-code-from icomoon
 
       - name: Create release
